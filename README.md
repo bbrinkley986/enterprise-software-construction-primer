@@ -14,6 +14,6 @@ This primer exists because AI coding assistants are the most powerful — and mo
 9. Automate your inspections. Code review alone won’t catch every architectural violation. Build automated compliance checks that validate code against your architecture decisions.
 10. AI multiplies whatever you give it. Good specs produce good code at speed. Bad specs produce confidently wrong code at scale. The quality of AI output is a direct measure of the quality of your engineering process.
 
-* **The bottom line:** Build the blueprints. Write the specs. Define the standards. Set up the inspections. **Then** *hand the AI the nail gun.*
+_**The bottom line:** Build the blueprints. Write the specs. Define the standards. Set up the inspections. **Then** *hand the AI the nail gun._
 
 Read on for the full playbook, with real examples, templates, and checklists from the build.
