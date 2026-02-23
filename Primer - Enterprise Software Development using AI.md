@@ -453,7 +453,7 @@ Security standards are your fire code. Just as fire code dictates fire-resistant
 - Log sensitive data if you don't specify what constitutes PII
 - Use weak cryptographic defaults if you don't specify your encryption standards
 
-**The rule:** Security is never implicit. Every security requirement must be explicit, documented, and enforced through automated tooling (linters, SAST scanners, pre-commit hooks). AI doesn't "know" your security posture — it must be told.
+**The rule:** Security is never implicit. Every security requirement must be explicit, documented, and enforced through automated tooling (linters, SAST scanners, pre-commit hooks). AI doesn't yet inherently know your security posture — it must be told.
 
 ### 3.4 Testing Strategy — The Inspection Schedule
 
@@ -1527,15 +1527,15 @@ This is the consolidated checklist. Use it as a gate review at each phase of you
 
 ### B.1 The Golden Rules
 
-1. **AI is a power tool, not an architect.** It multiplies the quality of your specifications. Good specs in, good code out. Bad specs in, confidently bad code out — at scale.
+1. **AI is a power tool, not yet an architect.** It multiplies the quality of your specifications. Good specs in, good code out. Bad specs in, confidently bad code out — at scale.
 
-2. **Never let AI make architectural decisions.** Service boundaries, data models, communication patterns, security architecture — these are human decisions that require business context AI doesn't have.
+2. **Never let AI make architectural decisions.** Service boundaries, data models, communication patterns, security architecture — these are human decisions that require business context AI doesn't yet reliably hold across sessions.
 
 3. **Context is everything.** An AI assistant with a well-written CLAUDE.md, architecture docs, and clear task specifications will outperform one with just a prompt. Invest in context the way you invest in onboarding.
 
 4. **Review AI output the way you review junior developer output.** It compiles. It probably passes tests. But does it follow your patterns? Does it handle edge cases? Does it fit the architecture? Would you approve this PR from a first-week engineer without scrutiny?
 
-5. **AI doesn't remember.** Every session starts fresh. Your context files, your documentation, your specifications — these are the institutional memory that AI lacks. If it's not written down, it doesn't exist for AI.
+5. **AI doesn't yet remember across sessions.** Every session currently starts fresh. Your context files, your documentation, your specifications — these are the institutional memory that AI still lacks. If it's not written down, it doesn't exist for AI.
 
 6. **Specify patterns by example.** Don't say "follow best practices." Say "follow the pattern in `AccountService.java` — constructor injection, repository pattern, Result return types, structured logging." Show, don't tell.
 
@@ -1611,7 +1611,7 @@ This is the consolidated checklist. Use it as a gate review at each phase of you
 **"AI replaces the need for architecture"**
 - AI can generate code faster, but speed without direction is just faster wrong
 - Architecture is more important with AI, not less, because AI amplifies both good and bad patterns
-- *Real example:* Before the three-layer payment architecture (ADR-008), each payment type's domain service implemented its own orchestration logic. AI accelerated the duplication — it built each new payment type by copying the pattern from the last, compounding the inconsistency. The architectural refactor (Domain → Orchestration → Data) was a human decision that no AI tool would have surfaced.
+- *Real example:* Before the three-layer payment architecture (ADR-008), each payment type's domain service implemented its own orchestration logic. AI accelerated the duplication — it built each new payment type by copying the pattern from the last, compounding the inconsistency. The architectural refactor (Domain → Orchestration → Data) was a human decision that no AI tool would have surfaced at the time.
 
 **"One prompt to rule them all"**
 - Trying to accomplish too much in a single AI interaction
@@ -1634,7 +1634,7 @@ Validates the current codebase against all ADR compliance rules and produces an 
 
 When to use: Before submitting code for review, after completing a feature, periodically during development to catch drift early.
 
-**`/check-docs` — Documentation Drift Detection (Golden Rule #5: AI doesn't remember)**
+**`/check-docs` — Documentation Drift Detection (Golden Rule #5: AI doesn't yet remember across sessions)**
 
 Scans for contradictions between documentation and implementation — ADR violations in code, broken file path references, environment variable conflicts, competing authoritative sources. Because AI assistants rely on documentation for context, stale documentation leads directly to incorrect implementations.
 
